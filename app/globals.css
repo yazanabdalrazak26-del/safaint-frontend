@@ -1,26 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
+/* =========================================================
+   سفينة الإتقان — Design System
+   ========================================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand */
+  --ds-primary: #008744;
+  --ds-primary-dark: #0f4c3a;
+  --ds-primary-deep: #062b21;
+  --ds-primary-light: #047857;
+
+  --ds-gold: #d4af37;
+  --ds-gold-light: #e5c05b;
+  --ds-gold-dark: #b89726;
+
+  /* Text */
+  --ds-text-primary: #0f172a;
+  --ds-text-secondary: #1e293b;
+  --ds-text-body: #475569;
+  --ds-text-muted: #64748b;
+
+  /* Background */
+  --ds-background: #ffffff;
+  --ds-background-soft: #faf9f6;
+  --ds-background-green-soft: #ecfdf5;
+
+  /* Border */
+  --ds-border: #e2e8f0;
+  --ds-border-primary: rgba(15, 76, 58, 0.2);
+  --ds-border-gold: rgba(212, 175, 55, 0.35);
+
+  /* Fonts */
+  --ds-font-cairo: "Cairo", sans-serif;
+  --ds-font-amiri: "Amiri", serif;
+
+  /* Radius */
+  --ds-radius-sm: 8px;
+  --ds-radius-md: 12px;
+  --ds-radius-lg: 16px;
+  --ds-radius-xl: 24px;
+  --ds-radius-full: 9999px;
+
+  /* ... خلي بقية الـspacing والshadows متل ما هي */ 
+--ds-surface-muted: #F1F5F9;
+--ds-live-dot: #34D399;
 }
+
+/* =========================================================
+   Tailwind Theme
+   ========================================================= */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--ds-primary);
+  --color-primary-dark: var(--ds-primary-dark);
+  --color-primary-deep: var(--ds-primary-deep);
+  --color-primary-light: var(--ds-primary-light);
+
+  --color-gold: var(--ds-gold);
+  --color-gold-light: var(--ds-gold-light);
+  --color-gold-dark: var(--ds-gold-dark);
+
+  --color-text-primary: var(--ds-text-primary);
+  --color-text-secondary: var(--ds-text-secondary);
+  --color-text-body: var(--ds-text-body);
+  --color-text-muted: var(--ds-text-muted);
+
+  --color-background-soft: var(--ds-background-soft);
+  --color-background-green-soft: var(--ds-background-green-soft);
+
+  --color-border-design: var(--ds-border);
+  --color-border-primary: var(--ds-border-primary);
+  --color-border-gold: var(--ds-border-gold);
+ --color-surface-muted: var(--ds-surface-muted);
+  --color-live-dot: var(--ds-live-dot);
+  --font-cairo: var(--ds-font-cairo);
+  --font-amiri: var(--ds-font-amiri);
+
+  --radius-design-sm: var(--ds-radius-sm);
+  --radius-design-md: var(--ds-radius-md);
+  --radius-design-lg: var(--ds-radius-lg);
+  --radius-design-xl: var(--ds-radius-xl);
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* =========================================================
+   Base
+   ========================================================= */
 
+html {
+  
+  scroll-behavior: smooth;
+}
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-width: 320px;
+  background: var(--ds-background-soft);
+  color: var(--ds-text-primary);
+  font-family: var(--ds-font-cairo);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
