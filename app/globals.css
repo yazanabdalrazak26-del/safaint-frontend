@@ -26,7 +26,8 @@
   --ds-background: #ffffff;
   --ds-background-soft: #faf9f6;
   --ds-background-green-soft: #ecfdf5;
-
+  --ds-background-feature: #F2F5F3;
+  --ds-background-community: #f5f7f4;
   /* Border */
   --ds-border: #e2e8f0;
   --ds-border-primary: rgba(15, 76, 58, 0.2);
@@ -46,6 +47,15 @@
   /* ... خلي بقية الـspacing والshadows متل ما هي */ 
 --ds-surface-muted: #F1F5F9;
 --ds-live-dot: #34D399;
+
+  --ds-testimonial-back: rgba(15, 76, 58, 0.15);
+  --ds-testimonial-middle: rgba(6, 78, 59, 0.4);
+  --ds-testimonial-middle-border: rgba(6, 78, 59, 0.1);
+  --ds-testimonial-front-border: rgba(6, 43, 33, 0.1);
+
+  --ds-testimonial-shadow: -12px 16px 36px -8px rgba(15, 76, 58, 0.16);
+
+  --ds-community-badge: #ecfdf5;
 }
 
 /* =========================================================
@@ -69,6 +79,8 @@
 
   --color-background-soft: var(--ds-background-soft);
   --color-background-green-soft: var(--ds-background-green-soft);
+  --color-background-feature: var(--ds-background-feature);
+  --color-background-community: var(--ds-background-community);
 
   --color-border-design: var(--ds-border);
   --color-border-primary: var(--ds-border-primary);
@@ -82,7 +94,27 @@
   --radius-design-md: var(--ds-radius-md);
   --radius-design-lg: var(--ds-radius-lg);
   --radius-design-xl: var(--ds-radius-xl);
-  
+  --background-image-session:
+    linear-gradient(
+      135deg,
+      #062b21 0%,
+      #064e3b 50%,
+      #0f172a 100%
+    );
+
+  --color-session-border: rgba(212, 175, 55, 0.3);
+
+  --shadow-session:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  --color-testimonial-back: var(--ds-testimonial-back);
+  --color-testimonial-middle: var(--ds-testimonial-middle);
+  --color-testimonial-middle-border: var(--ds-testimonial-middle-border);
+  --color-testimonial-front-border: var(--ds-testimonial-front-border);
+
+  --shadow-testimonial: var(--ds-testimonial-shadow);
+
+  --color-community-badge: var(--ds-community-badge);
 }
 
 /* =========================================================
