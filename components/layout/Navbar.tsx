@@ -231,7 +231,7 @@ export default function Navbar() {
 
           {/* Login */}
           <Link
-            href="/login"
+            href="/signin"
             className="
               flex
               h-10
