@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from 'react';
@@ -24,6 +25,7 @@ function AvailabilityandPassword() {
         <span className="font-amiri text-[11px] font-bold uppercase tracking-wide text-text-muted">
           القسم الثالث
         </span>
+
         <div className="flex items-center gap-2">
           <legend className="font-amiri text-xl font-bold text-text-primary">
             التفرغ والأمان
@@ -40,14 +42,24 @@ function AvailabilityandPassword() {
           <span className="font-amiri text-sm font-semibold text-text-primary">
             فترة التفرغ المفضلة
           </span>
-          <span className="font-sans text-sm font-semibold text-[#BA1A1A]">*</span>
+          <span className="font-sans text-sm font-semibold text-[#BA1A1A]">
+            *
+          </span>
         </label>
+
+        <input
+          type="hidden"
+          name="availability"
+          value={selectedAvailability}
+        />
+
         <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
           {availabilityOptions.map((opt) => (
             <button
               key={opt.value}
               type="button"
               onClick={() => setSelectedAvailability(opt.value)}
+              aria-pressed={selectedAvailability === opt.value}
               className={`flex items-center justify-center gap-2 rounded-design-sm p-3 transition-all ${
                 selectedAvailability === opt.value
                   ? 'bg-primary/10 ring-1 ring-primary/30'
@@ -65,6 +77,7 @@ function AvailabilityandPassword() {
                   <span className="h-1.5 w-1.5 rounded-full bg-white" />
                 )}
               </span>
+
               <div className="flex flex-col items-end">
                 <span className="font-amiri text-[15px] font-bold text-text-primary">
                   {opt.label}
@@ -80,25 +93,33 @@ function AvailabilityandPassword() {
 
       {/* Password */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {/* Password */}
         <div className="flex flex-col gap-1.5">
           <label className="flex items-center justify-end gap-1">
             <span className="font-amiri text-sm font-semibold text-text-primary">
               كلمة المرور
             </span>
-            <span className="font-sans text-sm font-semibold text-[#BA1A1A]">*</span>
+            <span className="font-sans text-sm font-semibold text-[#BA1A1A]">
+              *
+            </span>
           </label>
+
           <div className="relative">
             <input
               type={showPassword ? 'text' : 'password'}
+              name="password"
               placeholder="••••••••••••"
+              required
+              autoComplete="new-password"
               className={`${inputClass} pl-10 text-left`}
             />
+
             <button
               type="button"
               onClick={() => setShowPassword((v) => !v)}
               className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted transition-colors hover:text-primary"
-              aria-label={showPassword ? 'إخفاء كلمة المرور' : 'إظهار كلمة المرور'}
+              aria-label={
+                showPassword ? 'إخفاء كلمة المرور' : 'إظهار كلمة المرور'
+              }
             >
               {showPassword ? (
                 <EyeOff className="h-4 w-4" strokeWidth={2} />
@@ -109,25 +130,35 @@ function AvailabilityandPassword() {
           </div>
         </div>
 
-        {/* Confirm Password */}
         <div className="flex flex-col gap-1.5">
           <label className="flex items-center justify-end gap-1">
             <span className="font-amiri text-sm font-semibold text-text-primary">
               تأكيد كلمة المرور
             </span>
-            <span className="font-sans text-sm font-semibold text-[#BA1A1A]">*</span>
+            <span className="font-sans text-sm font-semibold text-[#BA1A1A]">
+              *
+            </span>
           </label>
+
           <div className="relative">
             <input
               type={showConfirmPassword ? 'text' : 'password'}
+              name="confirmPassword"
               placeholder="••••••••••••"
+              required
+              autoComplete="new-password"
               className={`${inputClass} pl-10 text-left`}
             />
+
             <button
               type="button"
               onClick={() => setShowConfirmPassword((v) => !v)}
               className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted transition-colors hover:text-primary"
-              aria-label={showConfirmPassword ? 'إخفاء كلمة المرور' : 'إظهار كلمة المرور'}
+              aria-label={
+                showConfirmPassword
+                  ? 'إخفاء كلمة المرور'
+                  : 'إظهار كلمة المرور'
+              }
             >
               {showConfirmPassword ? (
                 <EyeOff className="h-4 w-4" strokeWidth={2} />
@@ -139,7 +170,7 @@ function AvailabilityandPassword() {
         </div>
       </div>
 
-      {/* Agreement */}
+      {/* Teacher Code of Conduct */}
       <label className="flex cursor-pointer items-center justify-end gap-4 rounded-design-md bg-background-green-soft p-4">
         <span className="font-amiri text-[13px] leading-[21px] text-text-primary">
           أوافق على{' '}
@@ -148,10 +179,14 @@ function AvailabilityandPassword() {
           </span>{' '}
           وأتعهد بالالتزام بمعايير الجودة والأمانة في التعليم.
         </span>
+
         <input
           type="checkbox"
+          name="acceptTerms"
+          value="true"
           checked={agreed}
           onChange={(e) => setAgreed(e.target.checked)}
+          required
           className="h-5 w-5 flex-shrink-0 accent-primary"
         />
       </label>

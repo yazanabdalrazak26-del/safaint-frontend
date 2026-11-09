@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from 'react';
@@ -17,10 +18,12 @@ function Security() {
         <span className="font-amiri text-[11px] font-bold uppercase tracking-wide text-text-muted">
           القسم الثالث
         </span>
+
         <div className="flex items-center gap-2">
           <legend className="font-amiri text-xl font-bold text-text-primary">
             الأمان
           </legend>
+
           <span className="flex h-7 w-7 items-center justify-center rounded-design-full bg-primary font-sans text-sm font-bold text-white">
             3
           </span>
@@ -34,19 +37,28 @@ function Security() {
             <span className="font-amiri text-sm font-semibold text-text-primary">
               كلمة المرور
             </span>
-            <span className="font-sans text-sm font-semibold text-[#BA1A1A]">*</span>
+            <span className="font-sans text-sm font-semibold text-[#BA1A1A]">
+              *
+            </span>
           </label>
+
           <div className="relative">
             <input
               type={showPassword ? 'text' : 'password'}
+              name="password"
+              required
+              autoComplete="new-password"
               placeholder="••••••••••••"
               className={`${inputClass} pl-10 text-left`}
             />
+
             <button
               type="button"
               onClick={() => setShowPassword((v) => !v)}
               className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted transition-colors hover:text-primary"
-              aria-label={showPassword ? 'إخفاء كلمة المرور' : 'إظهار كلمة المرور'}
+              aria-label={
+                showPassword ? 'إخفاء كلمة المرور' : 'إظهار كلمة المرور'
+              }
             >
               {showPassword ? (
                 <EyeOff className="h-4 w-4" strokeWidth={2} />
@@ -63,19 +75,30 @@ function Security() {
             <span className="font-amiri text-sm font-semibold text-text-primary">
               تأكيد كلمة المرور
             </span>
-            <span className="font-sans text-sm font-semibold text-[#BA1A1A]">*</span>
+            <span className="font-sans text-sm font-semibold text-[#BA1A1A]">
+              *
+            </span>
           </label>
+
           <div className="relative">
             <input
               type={showConfirmPassword ? 'text' : 'password'}
+              name="confirmPassword"
+              required
+              autoComplete="new-password"
               placeholder="••••••••••••"
               className={`${inputClass} pl-10 text-left`}
             />
+
             <button
               type="button"
               onClick={() => setShowConfirmPassword((v) => !v)}
               className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted transition-colors hover:text-primary"
-              aria-label={showConfirmPassword ? 'إخفاء كلمة المرور' : 'إظهار كلمة المرور'}
+              aria-label={
+                showConfirmPassword
+                  ? 'إخفاء كلمة المرور'
+                  : 'إظهار كلمة المرور'
+              }
             >
               {showConfirmPassword ? (
                 <EyeOff className="h-4 w-4" strokeWidth={2} />
@@ -91,13 +114,22 @@ function Security() {
       <label className="flex cursor-pointer items-center justify-end gap-4 rounded-design-md bg-background-green-soft p-4">
         <span className="font-amiri text-[13px] leading-[21px] text-text-primary">
           أوافق على{' '}
-          <span className="font-amiri font-semibold text-primary">شروط الاستخدام</span> و
-          <span className="font-amiri font-semibold text-primary"> سياسة الخصوصية</span>.
+          <span className="font-amiri font-semibold text-primary">
+            شروط الاستخدام
+          </span>{' '}
+          و
+          <span className="font-amiri font-semibold text-primary">
+            {' '}سياسة الخصوصية
+          </span>
+          .
         </span>
+
         <input
           type="checkbox"
+          name="acceptTerms"
           checked={agreed}
           onChange={(e) => setAgreed(e.target.checked)}
+          required
           className="h-5 w-5 flex-shrink-0 accent-primary"
         />
       </label>

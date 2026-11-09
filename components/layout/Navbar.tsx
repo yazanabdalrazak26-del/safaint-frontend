@@ -14,10 +14,13 @@ import { useState } from "react";
 const navItems = [
   { label: "الرئيسية", href: "/" },
   { label: "برامجنا التدريبية", href: "/programs" },
-  { label: "من نحن", href: "/about" },
-  { label: "باقاتنا", href: "/subscriptions" },
+    { label: "معلمونا", href: "/teachers" },
+ 
+{ label: "باقاتنا", href: "/subscriptions" },
+   { label: "من نحن", href: "/about" },
   { label: "الأسئلة الشائعة", href: "/faq" },
   { label: "تواصل معنا", href: "/contact" },
+
 ];
 
 export default function Navbar() {
